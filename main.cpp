@@ -11,7 +11,7 @@ int ** makeMtx(size_t  m, size_t  n)
                         mtxR[i] = new int [n];
                 }
         }
-        catch (const std::badalloc() & e)
+        catch (const std::badalloc & e)
         {
                 rmMtx(mtxR, m);
 		throw;
@@ -80,5 +80,7 @@ int main()
 	transpose(mtx, m, n);
 
 	printMtx(mtx, m, n);
+
+	std::cout << "\n";
 	return 0;
 }
