@@ -1,6 +1,24 @@
 #include <iostream>
 #include <stdexcept>
 
+int ** makeMtx(size_t  m, size_t  n)
+{
+        int  ** mtxR = new int *[m];
+        try
+        {
+                for (size_t i = 0; i < m; ++i)
+                {
+                        mtxR[i] = new int [n];
+                }
+        }
+        catch (const std::badalloc() & e)
+        {
+                rmMtx(mtxR, m);
+		throw;
+        }
+
+        return mtxR;
+}
 
 int ** transpose(int ** mtx, size_t m, size_t n);
 void rmMtx(int** mtx, size_t m)
